@@ -1,0 +1,21 @@
+server:
+  port: 8200
+
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  instance:
+    ##eureka服务端的实例名称
+    hostname: localhost
+  client:
+    ##服务注册
+    registerWithEureka: false
+    ##服务发现
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    ##禁用自我保护机制
+    enable-self-preservation: false
